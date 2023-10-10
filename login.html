@@ -3,60 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css"/>
+    <title>LogIn</title>
+    <link rel="stylesheet" href="login.css"/>
 </head>
 <body>
-    <!--The log in formulation-->
-    <h1>Log in</h1>
-    <div class="formContainer">
+    <!-- The log in formulation -->
+<main>
+<div class="formContainer">
+    <h1 class="title">Contact me</h1>
     <form action="https://httpbin.org/anything" method="post">
-       <div class="firstName">
-        <label for="firstName">First Name</label>
-        <input id="firstName" name="firstName" type="text" required>
-
-       </div>
-       <div class="lastName">
-
-        <label for="lastName">Last Name</label>
-        <input id="lastName" name="lastName" type="text" required>
-       </div>
-       <div class="password">
-        <label for="pass">Password</label>
-        <input id="pass" name="password" type="password" required/>
-    </div>
-    </div>
-    <div class="email">
-        <label for="email" name="email" type="email" required>Email</label>
-        <input id="email" name="email" type="email" required />
-    </div>
-    <div class="message">
-        <label for="msg">Message</label>
-        <textarea id="msg" name="message"></textarea>
-    </div>
-
-    <div class="pet">
-        <label for="petSelect">Choose a pet</label>
-        <select name="pet" id="petSelect">
-            <option value="">Please choose a pet</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-        </select>
-        <div class="food">
-            <input type="radio" value="pizza" name="food" id="Pizza"/><label for="Pizza">Pizza</label>
-            <input type="radio" value="pasta" name="food2" id="Pasta"/><label for="Pasta">Pasta</label>
-            <input type="radio" value="salad" name="food3" id="Salad"/><label for="Salad">Salad</label>
-            <!--if we named all of them food, then you select only one. We named food 2 and food 3, so that we can choose several-->
+        <div class="name-container">
+            <label for="firstName" class="labels" required>First Name</label>
+            <input id="firstName" name="firstName" type="text" required>
+        
+            <label for="lastName" class="labels" required>Last Name</label>
+            <input id="lastName" name="lastName" type="text" required>
+        </div>
+        <div class="email">
+            <label for="email" class="labels" required>Email</label>
+            <input id="email" name="email" type="email" required placeholder="Enter your Email address">
+        </div>
+        <div class="message">
+            <label for="msg" class="labels">Message</label>
+            <textarea id="msg" name="message" rows="5"></textarea>
+        </div>
+        <div class="company">
+            <label for="company" class="labels">Company name</label>
+            <textarea id="company" name="company" placeholder="Enter your Company name" inputmode="text"></textarea>
         </div>
 
-    </div>
-    <div class="Send">
-        <button type="submit">Send</button>
+        <div class="role">
+            <label for="roleSelect" class="labels">What is your role in the company?</label>
+            <select name="role" id="roleSelect">
+                <option value="" class="labels">Field of work</option>
+                <option value="manager">Manager</option>
+                <option value="designer">Designer</option>
+                <option value="developer">Developer</option>
+                <option value="marketing specialist">Marketing Specialist</option>
+                <option value="other">Other</option>
+            </select>
         </div>
 
+        <div class="size">
+            <legend for="size" class="labels">Company size</legend>
+            <input type="radio" value="verySmall" name="size" id="verySmall"/><label for="verySmall">0-25</label>
+            <input type="radio" value="small" name="size" id="small"/><label for="small">25-100</label>
+            <input type="radio" value="medium" name="size" id="medium"/><label for="medium">100-500</label>
+            <input type="radio" value="large" name="size" id="large"/><label for="large">500-100</label>
+            <input type="radio" value="veryLarge" name="size" id="veryLarge"/><label for="veryLarge">1000+</label>
+        </div>
+
+        <div class="reason">
+            <label for="reason" class="labels">The reason you are contacting us</label>
+            <div class="radio-group">
+              <input type="radio" value="collaboration" name="reason" id="Collaboration" />
+              <label for="Collaboration">Collaboration</label>
+          
+              <input type="radio" value="employment" name="reason" id="Employment" />
+              <label for="Employment">Employment or internship</label>
+          
+              <input type="radio" value="other" name="reason" id="Other" />
+              <label for="Other">Other</label>
+            </div>
+          </div>
+          
+
+        <div class="Send">
+            <button type="submit">Send</button>
+        </div>
     </form>
-
+</div>
+</main> 
 </body>
 </html>
