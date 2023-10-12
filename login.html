@@ -13,23 +13,24 @@
     <h1 class="title">Contact me</h1>
     <form action="https://httpbin.org/anything" method="post">
         <div class="name-container">
-            <label for="firstName" class="labels" required>First Name</label>
-            <input id="firstName" name="firstName" type="text" required>
-        
-            <label for="lastName" class="labels" required>Last Name</label>
-            <input id="lastName" name="lastName" type="text" required>
+            <div class="name-column">
+                <label for="firstName" class="labels" required>First Name</label>
+                <input id="firstName" name="firstName" type="text" required>
+            </div>
+            <div class="name-column">
+                <label for="lastName" class="labels" required>Last Name</label>
+                <input id="lastName" name="lastName" type="text" required>
+            </div>
         </div>
-        <div class="email">
-            <label for="email" class="labels" required>Email</label>
-            <input id="email" name="email" type="email" required placeholder="Enter your Email address">
-        </div>
-        <div class="message">
-            <label for="msg" class="labels">Message</label>
-            <textarea id="msg" name="message" rows="5"></textarea>
-        </div>
+        <div class="email-company-container">
+            <div class="email">
+                <label for="email" class="labels" required>Email</label>
+                <input id="email" name="email" type="email" required placeholder="Enter your Email address">
+            </div>
+
         <div class="company">
             <label for="company" class="labels">Company name</label>
-            <textarea id="company" name="company" placeholder="Enter your Company name" inputmode="text"></textarea>
+            <input id="company" name="company" placeholder="Enter your Company name" inputmode="text"></input>
         </div>
 
         <div class="role">
@@ -44,28 +45,59 @@
             </select>
         </div>
 
-        <div class="size">
-            <legend for="size" class="labels">Company size</legend>
-            <input type="radio" value="verySmall" name="size" id="verySmall"/><label for="verySmall">0-25</label>
-            <input type="radio" value="small" name="size" id="small"/><label for="small">25-100</label>
-            <input type="radio" value="medium" name="size" id="medium"/><label for="medium">100-500</label>
-            <input type="radio" value="large" name="size" id="large"/><label for="large">500-100</label>
-            <input type="radio" value="veryLarge" name="size" id="veryLarge"/><label for="veryLarge">1000+</label>
+        
+      <!-- ... -->
+<div class="size">
+    <legend for="size" class="labels">Company size</legend>
+    <div class="radio-group">
+        <div class="radio-item">
+            <input type="radio" value="verySmall" name="size" id="verySmall"/>
+            <label for="verySmall">0-25</label>
         </div>
+        <div class="radio-item">
+            <input type="radio" value="small" name="size" id="small"/>
+            <label for="small">25-100</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" value="medium" name="size" id="medium"/>
+            <label for="medium">100-500</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" value="large" name="size" id="large"/>
+            <label for="large">500-1000</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" value="veryLarge" name="size" id="veryLarge"/>
+            <label for="veryLarge">1000+</label>
+        </div>
+    </div>
+</div>
 
-        <div class="reason">
-            <label for="reason" class="labels">The reason you are contacting us</label>
-            <div class="radio-group">
-              <input type="radio" value="collaboration" name="reason" id="Collaboration" />
-              <label for="Collaboration">Collaboration</label>
-          
-              <input type="radio" value="employment" name="reason" id="Employment" />
-              <label for="Employment">Employment or internship</label>
-          
-              <input type="radio" value="other" name="reason" id="Other" />
-              <label for="Other">Other</label>
-            </div>
-          </div>
+<div class="reason">
+    <label for="reason" class="labels">The reason you are contacting us</label>
+    <div class="checkbox-group reason-checkbox-group">
+        <div class="checkbox-item">
+            <input type="checkbox" value="collaboration" name="reason" id="Collaboration" />
+            <label for="Collaboration">Collaboration</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" value="employment" name="reason" id="Employment" />
+            <label for="Employment">Employment or internship</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" value="other" name="reason" id="Other" />
+            <label for="Other">Other</label>
+        </div>
+    </div>
+</div>
+
+<!-- ... -->
+
+<div class="message">
+    <label for="msg" class="labels">Message</label>
+    <textarea id="msg" name="message" rows="5"></textarea>
+</div>
+
           
 
         <div class="Send">

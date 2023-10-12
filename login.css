@@ -1,7 +1,7 @@
-* {
-  margin: 0px;
-  padding: 0;
-}
+body, html {
+    margin: 0;
+    padding: 0;
+  }
 
 main {
   background-color: rgb(25, 3, 30);
@@ -16,12 +16,12 @@ main {
   max-width: 500px;
   padding: 40px;
   display: grid;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content:center;
   border-radius: 5%;
   grid-template-columns: 500px;
-  gap: 30px;
+  grid-gap: 30px;
 }
 
 .title {
@@ -35,32 +35,30 @@ main {
   color: antiquewhite;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
 }
 
 .name-container {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-  column-span: 10px;
+  margin-bottom: 20px;
 
 }
 
 .name-container label {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .firstName,
 .lastName {
   width: 100%;
   margin-right: 0; /* Removing margin-right to obtain full width */
+  margin-bottom: 20px;
 }
 
-.company,
 .role,
 .reason {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color:antiquewhite;
 }
 
@@ -70,6 +68,8 @@ main {
 
 .email {
   grid-column: 1;
+  width:50%;
+  margin-bottom: 20px;
 }
 
 .reason {
@@ -78,6 +78,7 @@ main {
 
 .message {
   grid-column: span 2;
+  margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -91,77 +92,91 @@ select {
   box-sizing: border-box;
   border-radius: 6px;
 }
-
-.size {
-    width: 100%;
-    margin-bottom: 10px;
-    color: antiquewhite;
-}
-
-.size label {
-    display: block; /* Display labels as blocks to place them above radio buttons */
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.size input [type="radio"] {
-    display: none;
+.company {
+    width:50%;
+    grid-column: span 1;
 
 }
-.size input [type="radio"] + label {
-    position: relative;
-    padding-left: 30px;
+input[id="company"] {
+    width:100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+}
+/* ... */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
 }
 
-.size input[type="radio"] + label:before {
-    content: "";
-    display: inline-block;
+.radio-group .radio-item {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    outline: none;
     border: 1px solid #ccc;
-    margin-right: 10px; /* Adjust spacing between radio button and label */
-    vertical-align: middle; /* Vertically align the radio button and label */
-  }
-  
-  .size input[type="radio"]:checked + label:before {
-    border-color: green; /* Change the background color when checked */
-  }
-
-
-input[type="radio"] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  outline: none;
-  border: 1px solid #ccc;
-  column-span: 1fr;
-  display: flex;
-  flex-direction: column;
-  color:antiquewhite;
-  
+    margin-right: 10px; /* Add margin between the radio button and label */
 }
 
-
-input[type="radio"]:before {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 60%;
-  margin: 20% auto;
-  border-radius: 50%;
-  color: antiquewhite;
-  cursor:pointer;
+.radio-group label {
+    color: antiquewhite;
 }
 
-input[type="radio"]:checked:before {
-  background: green;
+/* Style the checkbox group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
 }
 
-input[type="radio"]:checked {
-  border-color: green;
+.checkbox-group .checkbox-item {
+    display: flex;
+    align-items: center;
 }
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10%; /* 10% border radius */
+    outline: none;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    color: antiquewhite;
+}
+
+/* I wanna style the checkboxes differently from the previous radio */
+.checkbox-group input[type="checkbox"]:before {
+    content: ""; /* Now it is empty. If we wanna have unicode checkmarks then we can write --> content: "\2714"*/
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10%;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked:before {
+    background: green;
+    color: white;
+}
+
 
 select {
   appearance: none;

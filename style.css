@@ -1,4 +1,78 @@
-/*-home.html styling.*/
+/*Mediaqueries!!*/
+/*Mobile first--> css utanför media queries är för mobil*/
+
+
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    background-color: beige;
+  }
+.container {
+    display:flex;
+    flex-direction: column; /*For mobile */
+    background-color: antiquewhite;
+    font-size: 2rem;  /*2 times more than the default font 
+    which I set in html tag as 16 pixels.*/
+    height: 100%;
+}
+
+.container div {
+    height: 100%;
+    background-color: cadetblue;
+}
+
+.container h2 {
+    font-size: 3rem;
+    /* 3 * 16 för mobil 
+       3 * 24 för desktop
+    */
+}
+
+/*Använd min-width eller max-width*/
+/*768 är en breakpoint.*/
+/*Ordning är jätteviktigt! Om man tar @media före .container t.ex då blir färgen fucked up*/
+/*https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
+
+@media (min-width:768px) {
+    .container {
+        display:flex;
+        flex-direction: row; /*For mobile */
+        background-color: red;
+    }
+        html {
+            font-size: 24px;
+          }
+    }
+
+ @media (max-width:500px) {
+        .container {
+            display:flex;
+            flex-direction: row; /*For mobile */
+            background-color: greenyellow;
+        }
+    }
+
+
+@media (min-width:1024px) {
+    .container {
+        display:flex;
+        flex-direction: row; /*For mobile */
+        background-color: blue;
+    }
+}
+
+
+
+/*
+-------------------------------------
+Below is the grid styling. Nothing to do with media queries. 
+*/
+
 .myGrid {
     display: grid;
     grid-template-columns: 200px 200px 200px; /*Or ou can just write "repeat" if you want all the columsn to be of equal size*/
